@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("final_data1.csv")  # Step 1: Loading the CSV file
+df = pd.read_csv("accelerometer\\final_data1.csv")  # Loading the CSV file
 
 label_map = {
     0: "Sleeping",
@@ -11,9 +11,9 @@ label_map = {
     4: "Forward Bending",
     5: "Backward Bending"
 }
-df["posture_name"] = df["label"].map(label_map)  # Step 2: Map numeric labels to posture names
+df["posture_name"] = df["label"].map(label_map)  # Map numeric labels to posture names
 
-plt.figure(figsize=(15, 12)) # Step 3: Plotting
+plt.figure(figsize=(15, 12)) #Plotting
 
 plt.subplot(3, 1, 1)
 plt.plot(df['index'], df['Ax1'], label='Ax1') 
